@@ -1,0 +1,68 @@
+#Default.aspx.cs
+using System;
+using System.Web.UI;
+namespace WebApplication2
+{
+    public partial class _Default : Page
+    {
+        protected void login_Click(object sender, EventArgs e)
+        {
+            if (password.Text == "qwe123")
+            {
+                // Storing email to Session variable  
+                Session["email"] = email.Text;
+            }
+            // Checking Session variable is not empty  
+            if (Session["email"] != null)
+            {
+                // Displaying stored email  
+                Label3.Text = "This email is stored to the session.";
+                Label4.Text = Session["email"].ToString();
+            }
+        }
+    }
+}
+
+
+-------------------------------------------------------------------------------------------------
+``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+#Default.aspx
+<%@ Page Title="Home Page" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs"  
+Inherits="WebApplication2._Default" %>  
+<head>  
+    <style type="text/css">  
+        .auto-style1 {  
+            width: 100%;  
+        }  
+        .auto-style2 {  
+            width: 105px;  
+        }  
+    </style>  
+</head>  
+<form id="form1" runat="server">  
+    <p>Provide Following Details</p>  
+    <table class="auto-style1">  
+        <tr>  
+            <td class="auto-style2">Email</td>  
+            <td>  
+                <asp:TextBox ID="email" runat="server" TextMode="Email"></asp:TextBox>  
+            </td>  
+        </tr>  
+        <tr>  
+            <td class="auto-style2">Password</td>  
+            <td>  
+                <asp:TextBox ID="password" runat="server" TextMode="Password"></asp:TextBox>  
+            </td>  
+        </tr>  
+        <tr>  
+            <td class="auto-style2"> </td>  
+            <td>  
+                <asp:Button ID="login" runat="server" Text="Login" OnClick="login_Click" />  
+            </td>  
+        </tr>  
+    </table>  
+    <br />  
+    <asp:Label ID="Label3" runat="server"></asp:Label>  
+    <br />  
+    <asp:Label ID="Label4" runat="server"></asp:Label>  
+</form>  
