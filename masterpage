@@ -1,0 +1,125 @@
+Site Master..
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication3.Site1" %>  
+  
+<!DOCTYPE html>  
+  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head runat="server">  
+   
+     
+    <asp:ContentPlaceHolder ID="head" runat="server">  
+    </asp:ContentPlaceHolder>  
+
+    <title>my layout</title>  
+    <link rel="stylesheet" type="text/css" href="StyleSheet1.css"/> 
+</head>  
+<body>  
+<header id="header">  
+<h1>c# corner</h1>  
+</header>  
+<nav id="nav">  
+    <ul>  
+        <li><a href="home.aspx">Home</a></li>  
+        <li><a href="#">About</a></li>  
+        <li><a href="#">Article</a></li>  
+        <li><a href="#">Contact</a></li>  
+    </ul>  
+</nav>  
+<aside id="side">  
+    <h1>news</h1>  
+    <a href="#"><p>creating html website</p></a>  
+    <a href="#"><p>learn css</p></a>  
+    <a href="#">learn c#</a>  
+</aside>  
+  
+  
+    <div id="con">  
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">  
+          
+        </asp:ContentPlaceHolder>  
+    </div>  
+  
+  
+<footer id="footer">  
+    copyright @c# corner  
+</footer>  
+    <!DOCTYPE html> 
+  
+    <form id="form1" runat="server">  
+      
+    </form>  
+</body>  
+</html>  
+--------------------------------------------------------------------------------------------------
+Style Sheet.cs
+#header {
+    color: #247BA0;
+    text-align: center;
+    font-size: 20px;
+}
+
+#nav {
+    background-color: #FF1654;
+    padding: 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a {
+    color: #F1FAEE;
+    font-size: 30px;
+    column-width: 5px;
+}
+
+li {
+    display: inline;
+    padding-left: 2px;
+    column-width: 20px;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 20px
+}
+
+li a:hover {
+    background-color: #F3FFBD;
+    color: #FF1654;
+    padding: 1px;
+}
+
+#side {
+    text-align: center;
+    float: right;
+    width: 15px;
+    padding-bottom: 79px;
+    background-color: #F1FAEE;
+}
+
+#article {
+    background-color: #EEF5DB;
+    padding: 10px;
+    padding-bottom: 75%;
+}
+
+#footer {
+    background-color: #C7EFCF;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+#con {
+    border: double;
+    border-color: burlywood;
+}
+-------------------------------------------------------------------
+Webform1.aspx
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication3.WebForm1" %>  
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">  
+</asp:Content>  
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
+    <h1>Home page</h1>  
+</asp:Content>  
